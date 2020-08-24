@@ -1,0 +1,3 @@
+/home/dream/CLionProjects/MiddleTemperature/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/dream/CLionProjects/MiddleTemperature/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/dream/CLionProjects/MiddleTemperature/cmake-build-debug/CMakeFiles/MiddleTemperature.dir
