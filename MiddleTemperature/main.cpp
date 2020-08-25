@@ -5,14 +5,12 @@ int main() {
     int N;
     std::cin >> N;
     std::vector<int> temperature;
+    int u = 0;
     for(int i = 0; i < N; ++i){
         int n;
         std::cin >> n;
         temperature.push_back(n);
-    }
-    int u = 0;
-    for(auto i : temperature) {
-        u += i;
+        u += n;
     }
     u = u / N;
 
