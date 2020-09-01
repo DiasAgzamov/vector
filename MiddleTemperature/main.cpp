@@ -2,27 +2,27 @@
 #include <vector>
 
 int main() {
-    int N;
-    std::cin >> N; // Numbers of days
+    int NumberOfDays;
+    std::cin >> NumberOfDays;
     std::vector<int> temperature;
-    int u = 0; // The arithmetic mean
-    for (int i = 0; i < N; ++i) {
+    int AverageMean = 0;
+    for (int i = 0; i < NumberOfDays; ++i) {
         int t;
         std::cin >> t;
         temperature.push_back(t);
-        u += t;
+        AverageMean += t;
     }
-    u = u / N;
+    AverageMean = AverageMean / NumberOfDays;
 
-    std::vector<int> K; // Numbers of above the arithmetic mean
+    std::vector<int> AboveAverageMean; // Numbers of above the arithmetic mean
 
     for (int i = 0; i < temperature.size(); ++i) {
-        if (temperature[i] >= u) {
-            K.push_back(i);
+        if (temperature[i] >= AverageMean) {
+            AboveAverageMean.push_back(i);
         }
     }
-    std::cout << K.size() << std::endl;
-    for (auto x : K) {
+    std::cout << AboveAverageMean.size() << std::endl;
+    for (auto x : AboveAverageMean) {
         std::cout << x << " ";
     }
     return 0;
