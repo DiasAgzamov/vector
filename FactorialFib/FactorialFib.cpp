@@ -13,7 +13,10 @@ int Factorial (int num){
 int main() {
     int a;
     std::cin >> a;
+    std::cout << "Factorial is: " << std::endl
     std::cout << Factorial(a) << std::endl;
+    std::cout << "Fibonacci is: " << std::endl
+    std::cout << Fibonacci(a) << std::endl;
     return 0;
 }
 
