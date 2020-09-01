@@ -14,7 +14,7 @@ int main() {
     }
     AverageMean = AverageMean / NumberOfDays;
 
-    std::vector<int> AboveAverageMean; // Numbers of above the arithmetic mean
+    std::vector<int> AboveAverageMean;
 
     for (int i = 0; i < temperature.size(); ++i) {
         if (temperature[i] >= AverageMean) {
