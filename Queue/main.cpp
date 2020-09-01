@@ -1,6 +1,28 @@
 #include <iostream>
 #include <vector>
 
+void Come(int c, std::vector<bool>& v) {
+    if (c >= 0) {
+        for (int i = 0; i < c; ++i) {
+            v.push_back(false);
+        }
+    } else {
+        for (int i = 0; i > c; --i) {
+            v.pop_back();
+        }
+    }
+}
+
+void Worry_Count(std::vector<bool>& v) {
+    int wc = 0;
+    for (auto x : v) {
+        if (v[x] == 1) {
+            wc++;
+        }
+    }
+    std::cout << wc << std::endl;
+}
+
 int main() {
     std::vector<bool> queue;
     int Q;
@@ -9,19 +31,12 @@ int main() {
     int come;
     std::string oper;
     std::cin >> Q;
+    
     for (int q = 0; q < Q; ++q) {
         std::cin >> oper;
         if (oper == "come") {
             std::cin >> come;
-            if (come >= 0) {
-                for (int c = 0; c < come; ++c) {
-                    queue.push_back(false);
-                }
-            } else {
-                for (int c = 0; c > come; --c) {
-                    queue.pop_back();
-                }
-            }
+            Come(come, queue);
         } else if (oper == "worry") {
             std::cin >> worry;
             queue[worry] = true;
@@ -29,16 +44,9 @@ int main() {
             std::cin >> quiet;
             queue[quiet] = false;
         } else if (oper == "worry_count") {
-            int wc = 0;
-            for (auto w : queue) {
-                if (queue[w] == 1) {
-                    wc++;
-                }
-            }
-            std::cout << wc << std::endl;
+            Worry_Count(queue);
         }
     }
-
-
+    
     return 0;
 }
