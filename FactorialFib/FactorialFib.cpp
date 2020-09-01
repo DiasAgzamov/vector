@@ -1,8 +1,13 @@
 #include <iostream>
 
-int Factorial(int n) {
+int Fibonacci(int n) {
     if(n <= 1) return 1;
-    return Factorial(n - 2) + Factorial(n - 1);
+    return Fibonacci(n - 2) + Fibonacci(n - 1);
+}
+
+int Factorial (int num){
+    if (num <= 1) return 1;
+    return n * Factorial(num - 1)
 }
 
 int main() {
