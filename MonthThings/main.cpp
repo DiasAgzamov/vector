@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 
-void Months(std::vector<std::vector<std::string>>& months){
+/*void Months(std::vector<std::vector<std::string>>& months){
     std::vector<std::vector<int>> january (31);
     std::vector<std::vector<int>> february (28);
     std::vector<std::vector<int>> march (31);
@@ -15,7 +15,7 @@ void Months(std::vector<std::vector<std::string>>& months){
     std::vector<std::vector<int>> october (31);
     std::vector<std::vector<int>> november (30);
     std::vector<std::vector<int>> december (31);
-}
+}*/
 
 void DUMP(int &i, std::vector<std::vector<std::string>> &v) {
     std::cout << v[i].size() << std::endl;
@@ -30,8 +30,8 @@ void NEXT(std::vector<std::vector<std::string>>& v){
 }
 
 int main() {
-    std::vector<std::vector<std::string>>months;
-    Months(months);
+    std::vector<std::vector<std::string>> months (31);
+    //Months(months);
     int CountOfOperations;
     int day;
     std::string things;
