@@ -3,27 +3,27 @@
 
 int main() {
     int N;
-    std::cin >> N;
+    std::cin >> N; // Numbers of days
     std::vector<int> temperature;
-    int u = 0; //μ - the arithmetic average of the number 
-    for(int i = 0; i < N; ++i){
-        int num;
-        std::cin >> num;
-        temperature.push_back(num);
-        u += num;
+    int u = 0; // The arithmetic mean
+    for (int i = 0; i < N; ++i) {
+        int t;
+        std::cin >> t;
+        temperature.push_back(t);
+        u += t;
     }
     u = u / N;
 
-    std::vector<int> K;
+    std::vector<int> K; // Numbers of above the arithmetic mean
 
-    for (int x = 0; x < temperature.size(); ++x){
-        if(temperature[x] >= u){
-            K.push_back(x);
+    for (int i = 0; i < temperature.size(); ++i) {
+        if (temperature[i] >= u) {
+            K.push_back(i);
         }
     }
     std::cout << K.size() << std::endl;
-    for (auto i : K){
-        std::cout << i << " ";
+    for (auto x : K) {
+        std::cout << x << " ";
     }
     return 0;
 }
