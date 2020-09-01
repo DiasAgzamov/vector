@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-void Come(int c, std::vector<bool>& v) {
+void Come(int c, std::vector<bool> &v) {
     if (c >= 0) {
         for (int i = 0; i < c; ++i) {
             v.push_back(false);
@@ -13,7 +13,7 @@ void Come(int c, std::vector<bool>& v) {
     }
 }
 
-void Worry_Count(std::vector<bool>& v) {
+void Worry_Count(std::vector<bool> &v) {
     int wc = 0;
     for (auto x : v) {
         if (v[x] == 1) {
@@ -25,28 +25,28 @@ void Worry_Count(std::vector<bool>& v) {
 
 int main() {
     std::vector<bool> queue;
-    int Q;
+    int NumbersOfOperation;
     int worry;
     int quiet;
     int come;
-    std::string oper;
-    std::cin >> Q;
-    
-    for (int q = 0; q < Q; ++q) {
-        std::cin >> oper;
-        if (oper == "come") {
+
+    std::cin >> NumbersOfOperation;
+    for (int q = 0; q < NumbersOfOperation; ++q) {
+        std::string operation;
+        std::cin >> operation;
+        if (operation == "come") {
             std::cin >> come;
             Come(come, queue);
-        } else if (oper == "worry") {
+        } else if (operation == "worry") {
             std::cin >> worry;
             queue[worry] = true;
-        } else if (oper == "quiet") {
+        } else if (operation == "quiet") {
             std::cin >> quiet;
             queue[quiet] = false;
-        } else if (oper == "worry_count") {
+        } else if (operation == "worry_count") {
             Worry_Count(queue);
         }
     }
-    
+
     return 0;
 }
