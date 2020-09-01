@@ -5,12 +5,12 @@ int main() {
     int N;
     std::cin >> N;
     std::vector<int> temperature;
-    int u = 0;
+    int u = 0; //μ - the arithmetic average of the number 
     for(int i = 0; i < N; ++i){
-        int n;
-        std::cin >> n;
-        temperature.push_back(n);
-        u += n;
+        int num;
+        std::cin >> num;
+        temperature.push_back(num);
+        u += num;
     }
     u = u / N;
 
