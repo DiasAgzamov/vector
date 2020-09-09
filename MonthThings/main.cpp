@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 
-void Year(std::vector<std::vector<int>>& months){
+void Year(std::vector<std::vector<int>> &months) {
     months.resize(12);
     months[0].resize(31);
     months[1].resize(28);
@@ -16,7 +16,7 @@ void Year(std::vector<std::vector<int>>& months){
     months[9].resize(31);
     months[10].resize(30);
     months[11].resize(31);
-    for(int i = 0; i < months.size(); ++i){
+    for (int i = 0; i < months.size(); ++i) {
         std::cout << months[i].size() << " ";
     }
     std::cout << std::endl;
@@ -29,25 +29,25 @@ void dump(int &i, std::vector<std::vector<std::string>> &v) {
     }
 }
 
-void next(std::vector<std::vector<int>> v){
+void next(std::vector<std::vector<int>> v) {
     int i = 0;
     Year(v);
     std::cout << v[i].size() << std::endl;
     v[i++];
-    v[i].insert(end(v[i]), begin(v[i-1]), end(v[i-1]));
+    v[i].insert(end(v[i]), begin(v[i - 1]), end(v[i - 1]));
     std::cout << v[i].size() << std::endl;
 }
 
 int main() {
     std::vector<std::vector<int>> year;
-    std::vector<std::vector<std::string>> months (31);
+    std::vector<std::vector<std::string>> months(31);
     Year(year);
 
     int CountOfOperations;
     int day;
     std::string things;
     std::string operation;
-    
+
     std::cin >> CountOfOperations;
     for (int q = 0; q < CountOfOperations; ++q) {
         std::cin >> operation;
