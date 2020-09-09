@@ -4,18 +4,18 @@
 
 void Months(std::vector<std::vector<std::string>>& months){
     months.reserve(12);
-    months[0].resize(31);
-    months[1].resize(28);
-    months[2].resize(31);
-    months[3].resize(30);
-    months[4].resize(31);
-    months[5].resize(30);
-    months[6].resize(31);
-    months[7].resize(31);
-    months[8].resize(30);
-    months[9].resize(31);
-    months[10].resize(30);
-    months[11].resize(31);
+    months[0].reserve(31);
+    months[1].reserve(28);
+    months[2].reserve(31);
+    months[3].reserve(30);
+    months[4].reserve(31);
+    months[5].reserve(30);
+    months[6].reserve(31);
+    months[7].reserve(31);
+    months[8].reserve(30);
+    months[9].reserve(31);
+    months[10].reserve(30);
+    months[11].reserve(31);
 }
 
 void dump(int &i, std::vector<std::vector<std::string>> &v) {
