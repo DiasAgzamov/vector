@@ -18,14 +18,14 @@ void Months(std::vector<std::vector<std::string>>& months){
     months[11].resize(31);
 }
 
-void DUMP(int &i, std::vector<std::vector<std::string>> &v) {
+void dump(int &i, std::vector<std::vector<std::string>> &v) {
     std::cout << v[i].size() << std::endl;
     for (auto x : v[i]) {
         std::cout << x << " ";
     }
 }
 
-void NEXT(std::vector<std::vector<std::string>>& v){
+void next(std::vector<std::vector<std::string>>& v){
     int i = 0;
     if(v[i] >= v[i + 1]) {
         v[i].insert(end(v[i]), begin(v[i + 1]), end(v[i + 1]));
@@ -44,15 +44,15 @@ int main() {
     std::cin >> CountOfOperations;
     for (int q = 0; q < CountOfOperations; ++q) {
         std::cin >> operation;
-        if (operation == "add") {
+        if (operation == "ADD") {
             std::cin >> day >> things;
             months[day].push_back(things);
-        } else if (operation == "dump") {
+        } else if (operation == "DUMP") {
             std::cin >> day;
-            DUMP(day, months);
+            dump(day, months);
             std::cout << std::endl;
-        } else if (operation == "next") {
-            NEXT(months);
+        } else if (operation == "NEXT") {
+            next(months);
         }
     }
     return 0;
