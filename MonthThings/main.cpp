@@ -9,13 +9,27 @@ void dump(int &i, std::vector<std::vector<std::string>> &v) {
     }
 }
 
-void next(){
+void next(const std::vector<int>& year, std::vector<std::vector<std::string>>& month, const int& m){
+    std::cout << month.size() << std::endl;
 
+    if(month.size() <= year[m]) {
+        month.resize(year[m]);
+    }else{
+        while(month.size() > year[m]){
+            for (int i = year[m] - 1; i < month.size(); ++i){
+                month[year[m] - 1].insert(end(month[year[m]-1]), begin(month[i]),
+                                          end(month[i]));
+            }
+            month.resize(year[m]);
+        }
+    }
+    std::cout << month.size() << std::endl;
 }
+
 int main() {
-    int i = 0;
-    std::vector<int> year {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    std::vector<std::vector<std::string>> month (year[i]);
+    int m = 0;
+    std::vector<int> year {32, 29, 32, 31, 32, 31, 32, 32, 31, 32, 31, 32};
+    std::vector<std::vector<std::string>> month (year[m]);
 
     int CountOfOperations;
     int day;
@@ -33,7 +47,11 @@ int main() {
             dump(day, month);
             std::cout << std::endl;
         } else if (operation == "NEXT") {
-            next(year, month, day, things);
+            m++;
+            if (m == 12){
+                m = 0;
+            }
+            next(year, month, m);
         }
     }
     return 0;
