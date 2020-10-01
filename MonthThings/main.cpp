@@ -3,7 +3,7 @@
 #include <string>
 
 void dump(int &i, std::vector<std::vector<std::string>> &v) {
-    std::cout << v[i].size() << " ";
+    std::cout << v[i-1].size() << " ";
     for (auto x : v[i]) {
         std::cout << x << " ";
     }
@@ -28,7 +28,7 @@ void next(const std::vector<int>& year, std::vector<std::vector<std::string>>& m
 
 int main() {
     int m = 0;
-    std::vector<int> year {32, 29, 32, 31, 32, 31, 32, 32, 31, 32, 31, 32};
+    std::vector<int> year {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     std::vector<std::vector<std::string>> month (year[m]);
 
     int CountOfOperations;
@@ -41,7 +41,7 @@ int main() {
         std::cin >> operation;
         if (operation == "ADD") {
             std::cin >> day >> things;
-            month[day].push_back(things);
+            month[day-1].push_back(things);
         } else if (operation == "DUMP") {
             std::cin >> day;
             dump(day, month);
