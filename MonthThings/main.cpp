@@ -4,7 +4,7 @@
 
 void dump(int &i, std::vector<std::vector<std::string>> &v) {
     std::cout << v[i-1].size() << " ";
-    for (auto x : v[i]) {
+    for (auto x : v[i-1]) {
         std::cout << x << " ";
     }
 }
